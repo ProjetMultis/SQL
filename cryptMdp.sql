@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  Dim 16 juil. 2017 à 19:41
+-- Généré le :  mar. 18 juil. 2017 à 09:55
 -- Version du serveur :  10.1.25-MariaDB
 -- Version de PHP :  7.1.7
 
@@ -25,6 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `Article`
+--
+
+CREATE TABLE `Article` (
+  `idArticle` int(11) NOT NULL,
+  `titre` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `imageArticle` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `categorie` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `Article`
+--
+
+INSERT INTO `Article` (`idArticle`, `titre`, `text`, `imageArticle`, `categorie`) VALUES
+(1, 'Paris', 'Le Lorem Ipsum est simplement du faux texte employ', 'images/img1.png', 'exemple'),
+(2, 'Article 2', 'Le Lorem Ipsum est simplement du faux texte employ', 'images/img1.png', 'exemple'),
+(3, 'Article 3', 'Le Lorem Ipsum est simplement du faux texte employ', 'images/img1.png', 'exemple');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateurs`
 --
 
@@ -41,11 +64,18 @@ CREATE TABLE `utilisateurs` (
 
 INSERT INTO `utilisateurs` (`idUser`, `nom`, `email`, `mdp`) VALUES
 (1, 'thibaut', 'ferid@hh.com', '7218eAVVDV3Cs'),
-(2, 'dd', 'dd', '7218eAVVDV3Cs');
+(2, 'dd', 'dd', '7218eAVVDV3Cs'),
+(3, 'thibaut', 'ti@gmail.com', '72lCVHCSFxXaQ');
 
 --
 -- Index pour les tables déchargées
 --
+
+--
+-- Index pour la table `Article`
+--
+ALTER TABLE `Article`
+  ADD PRIMARY KEY (`idArticle`);
 
 --
 -- Index pour la table `utilisateurs`
@@ -58,10 +88,15 @@ ALTER TABLE `utilisateurs`
 --
 
 --
+-- AUTO_INCREMENT pour la table `Article`
+--
+ALTER TABLE `Article`
+  MODIFY `idArticle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `idUser` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `idUser` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
