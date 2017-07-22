@@ -18,6 +18,7 @@ create table Morceau
 	(
        idMorceau int(11) not null auto_increment,
        nomMorceau varchar(50),
+       idUtilisateur int(11),
        primary key(idMorceau),
        foreign key(idUtilisateur) references Utilisateur(idUtilisateur)
 	);
@@ -29,6 +30,7 @@ create table Artiste
         idArtiste int(11) not null auto_increment,
         nomArtiste varchar(50),
         styleArtiste varchar(50),
+	idMorceau int(11),
         primary key(idArtiste),
         foreign key(idMorceau) references Morceau(idMorceau)
 	);
